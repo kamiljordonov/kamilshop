@@ -4,7 +4,7 @@ Online Shoping Platform
 
 https://kamilshop.herokuapp.com
 
-##Used Technologies
+## Used Technologies
 
 * Java
 * Spring Boot
@@ -29,7 +29,7 @@ https://kamilshop.herokuapp.com
 * "/user/{id}/save" for create and save user
 * "user/{id}/profile" for user profile
 
-##User Guide
+## User Guide
 
 Home page lists all products:
 
