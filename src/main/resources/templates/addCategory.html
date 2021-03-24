@@ -1,0 +1,184 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add Category</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/img/cart.png}">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+    <link rel="stylesheet" th:href="@{/css/owl.theme.css}">
+    <link rel="stylesheet" th:href="@{/css/owl.transitions.css}">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/normalize.css}">
+    <!-- meanmenu icon CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/meanmenu.min.css}">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <!-- morrisjs CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/morrisjs/morris.css}">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/scrollbar/jquery.mCustomScrollbar.min.css}">
+    <!-- metisMenu CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/metisMenu/metisMenu.min.css}">
+    <link rel="stylesheet" th:href="@{/css/metisMenu/metisMenu-vertical.css}">
+    <!-- calendar CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/calendar/fullcalendar.min.css}">
+    <link rel="stylesheet" th:href="@{/css/calendar/fullcalendar.print.min.css}">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/responsive.css}">
+    <!-- modernizr JS
+		============================================ -->
+    <script th:src="@{/js/vendor/modernizr-2.8.3.min.js}"></script>
+</head>
+
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div th:replace="@{layout/sidebar.html}"></div>
+<!-- Start Welcome area -->
+<div class="all-content-wrapper">
+    <div th:replace="@{layout/header.html}"></div>
+    <!-- Single pro tab start-->
+    <div class="single-product-tab-area mg-tb-15">
+        <!-- Single pro tab review Start-->
+        <div class="single-pro-review-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sparkline12-list">
+                            <div class="sparkline12-hd">
+                                <div class="main-sparkline12-hd">
+                                    <h1>Category Information</h1>
+                                </div>
+                            </div>
+                            <div class="sparkline12-graph">
+                                <div class="basic-login-form-ad">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="all-form-element-inner">
+                                                <form th:object="${category}" method="post" th:action="@{/category/save}">
+
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <label class="login2 pull-right pull-right-pro">Category Name</label>
+                                                            </div>
+                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                                <input type="text" name="name" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="login-btn-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-3"></div>
+                                                                <div class="col-lg-9">
+                                                                    <div class="login-horizental cancel-wp pull-left">
+                                                                        <button class="btn btn-white" type="reset">Cancel</button>
+                                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Save Change</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:replace="@{layout/footer}"></div>
+</div>
+
+
+
+
+
+<!-- jquery
+    ============================================ -->
+<script th:src="@{/js/vendor/jquery-1.11.3.min.js}"></script>
+<!-- bootstrap JS
+    ============================================ -->
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<!-- wow JS
+    ============================================ -->
+<script th:src="@{/js/wow.min.js}"></script>
+<!-- price-slider JS
+    ============================================ -->
+<script th:src="@{/js/jquery-price-slider.js}"></script>
+<!-- meanmenu JS
+    ============================================ -->
+<script th:src="@{/js/jquery.meanmenu.js}"></script>
+<!-- owl.carousel JS
+    ============================================ -->
+<script th:src="@{/js/owl.carousel.min.js}"></script>
+<!-- sticky JS
+    ============================================ -->
+<script th:src="@{/js/jquery.sticky.js}"></script>
+<!-- scrollUp JS
+    ============================================ -->
+<script th:src="@{/js/jquery.scrollUp.min.js}"></script>
+<!-- mCustomScrollbar JS
+    ============================================ -->
+<script th:src="@{/js/scrollbar/jquery.mCustomScrollbar.concat.min.js}"></script>
+<script th:src="@{/js/scrollbar/mCustomScrollbar-active.js}"></script>
+<!-- metisMenu JS
+    ============================================ -->
+<script th:src="@{/js/metisMenu/metisMenu.min.js}"></script>
+<script th:src="@{/js/metisMenu/metisMenu-active.js}"></script>
+<!-- morrisjs JS
+    ============================================ -->
+<script th:src="@{/js/sparkline/jquery.sparkline.min.js}"></script>
+<script th:src="@{/js/sparkline/jquery.charts-sparkline.js}"></script>
+<!-- calendar JS
+    ============================================ -->
+<script th:src="@{/js/calendar/moment.min.js}"></script>
+<script th:src="@{/js/calendar/fullcalendar.min.js}"></script>
+<script th:src="@{/js/calendar/fullcalendar-active.js}"></script>
+<!-- plugins JS
+    ============================================ -->
+<script th:src="@{/js/plugins.js}"></script>
+<!-- main JS
+    ============================================ -->
+<script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>

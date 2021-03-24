@@ -1,0 +1,208 @@
+<!doctype html>
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Product Details</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+       ============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/img/cart.png}">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+    <link rel="stylesheet" th:href="@{/css/owl.theme.css}">
+    <link rel="stylesheet" th:href="@{/css/owl.transitions.css}">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/normalize.css}">
+    <!-- meanmenu icon CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/meanmenu.min.css}">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <!-- morrisjs CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/morrisjs/morris.css}">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/scrollbar/jquery.mCustomScrollbar.min.css}">
+    <!-- metisMenu CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/metisMenu/metisMenu.min.css}">
+    <link rel="stylesheet" th:href="@{/css/metisMenu/metisMenu-vertical.css}">
+    <!-- calendar CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/calendar/fullcalendar.min.css}">
+    <link rel="stylesheet" th:href="@{/css/calendar/fullcalendar.print.min.css}">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" th:href="@{/css/responsive.css}">
+    <!-- modernizr JS
+		============================================ -->
+    <script th:src="@{/js/vendor/modernizr-2.8.3.min.js}"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div th:replace="@{layout/sidebar}"></div>
+    <!-- Start Welcome area -->
+    <div class="all-content-wrapper">
+        <div th:replace="@{layout/header}"></div>
+        <!-- Single pro tab start-->
+        <div class="single-product-tab-area mg-t-15 mg-b-30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                        <div id="myTabContent1" class="tab-content">
+                            <div class="product-tab-list tab-pane fade active in" id="single-tab1">
+                                <img th:src="@{/img/product/bg-1.jpg}" alt="" />
+                            </div>
+                            <div class="product-tab-list tab-pane fade" id="single-tab2">
+                                <img th:src="@{/img/product/bg-2.jpg}" alt="" />
+                            </div>
+                            <div class="product-tab-list tab-pane fade" id="single-tab3">
+                                <img th:src="@{/img/product/bg-3.jpg}" alt="" />
+                            </div>
+                            <div class="product-tab-list tab-pane fade" id="single-tab4">
+                                <img th:src="@{/img/product/bg-1.jpg}" alt="" />
+                            </div>
+                            <div class="product-tab-list tab-pane fade" id="single-tab5">
+                                <img th:src="@{/img/product/bg-2.jpg}" alt="" />
+                            </div>
+                        </div>
+                        <ul id="single-product-tab">
+                            <li class="active">
+                                <a href="#single-tab1"><img th:src="@{/img/product/1.jpg}" alt="" /></a>
+                            </li>
+                            <li>
+                                <a href="#single-tab2"><img th:src="@{/img/product/2.jpg}" alt="" /></a>
+                            </li>
+                            <li>
+                                <a href="#single-tab3"><img th:src="@{/img/product/3.jpg}" alt="" /></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                        <div class="single-product-details res-pro-tb">
+                            <h1 th:text="${product.title}">ITEM TITLE</h1>
+                            <span class="single-pro-star"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                            <div class="single-pro-price">
+                                <span class="single-regular" th:text="${product.price+' KGS'}">$150.00</span>
+                            </div>
+                            <div>
+                                <h3>Posted By:</h3>
+                                <span class="single-regular"><a th:href="@{/user/__${product.owner.id}__/profile}"><i class="fa fa-user"></i><h6 th:text="${product.owner.getUsername()}"></h6></a></span>
+                                <span class="single-regular"><div><i class="fa fa-phone"></i><h6 th:text="${product.owner.telephone}">+996703673027</h6></div></span>
+                            </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Single pro tab End-->
+        <!-- Single pro tab review Start-->
+        <div class="single-pro-review-area mt-t-30 mg-b-15">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <ul id="myTab" class="tab-review-design">
+                            <li class="active"><a href="#description">description</a></li>
+
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <div class="product-tab-list product-details-ect tab-pane fade active in" id="description">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="review-content-section">
+                                            <p th:text="${product.description}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                                mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
+                                                beatae vitae dicta sunt explicabo.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                </div>
+    </div>
+
+        <div th:replace="@{layout/footer.html}"></div>
+
+    <!-- jquery
+		============================================ -->
+    <script th:src="@{/js/vendor/jquery-1.11.3.min.js}"></script>
+    <!-- bootstrap JS
+		============================================ -->
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <!-- wow JS
+		============================================ -->
+    <script th:src="@{/js/wow.min.js}"></script>
+    <!-- price-slider JS
+		============================================ -->
+    <script th:src="@{/js/jquery-price-slider.js}"></script>
+    <!-- meanmenu JS
+		============================================ -->
+    <script th:src="@{/js/jquery.meanmenu.js}"></script>
+    <!-- owl.carousel JS
+		============================================ -->
+    <script th:src="@{/js/owl.carousel.min.js}"></script>
+    <!-- sticky JS
+		============================================ -->
+    <script th:src="@{/js/jquery.sticky.js}"></script>
+    <!-- scrollUp JS
+		============================================ -->
+    <script th:src="@{/js/jquery.scrollUp.min.js}"></script>
+    <!-- mCustomScrollbar JS
+		============================================ -->
+    <script th:src="@{/js/scrollbar/jquery.mCustomScrollbar.concat.min.js}"></script>
+    <script th:src="@{/js/scrollbar/mCustomScrollbar-active.js}"></script>
+    <!-- metisMenu JS
+		============================================ -->
+    <script th:src="@{/js/metisMenu/metisMenu.min.js}"></script>
+    <script th:src="@{/js/metisMenu/metisMenu-active.js}"></script>
+    <!-- morrisjs JS
+		============================================ -->
+    <script th:src="@{/js/sparkline/jquery.sparkline.min.js}"></script>
+    <script th:src="@{/js/sparkline/jquery.charts-sparkline.js}"></script>
+    <!-- calendar JS
+		============================================ -->
+    <script th:src="@{/js/calendar/moment.min.js}"></script>
+    <script th:src="@{/js/calendar/fullcalendar.min.js}"></script>
+    <script th:src="@{/js/calendar/fullcalendar-active.js}"></script>
+    <!-- plugins JS
+		============================================ -->
+    <script th:src="@{/js/plugins.js}"></script>
+    <!-- main JS
+		============================================ -->
+    <script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>
